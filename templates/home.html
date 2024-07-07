@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credit Card Fraud Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 24px;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Credit Card Fraud Detection</h1>
+    <form method="POST">
+        <label for="distance_from_home">Distance from Home:</label>
+        <input type="number" name="distance_from_home" id="distance_from_home" placeholder="Enter distance from home" step = any required>
+        
+        <label for="distance_from_last_transaction">Distance from Last Transaction:</label>
+        <input type="number" name="distance_from_last_transaction" id="distance_from_last_transaction" placeholder="Enter distance from last transaction" step = any required>
+        
+        <label for="ratio_to_median_purchase_price">Ratio to Median Purchase Price:</label>
+        <input type="number" name="ratio_to_median_purchase_price" id="ratio_to_median_purchase_price" placeholder="Enter ratio to median purchase price" step = any required>
+        
+        <label for="repeat_retailer">Repeat Retailer? (1 for yes, 0 for no):</label>
+        <input type="number" name="repeat_retailer" id="repeat_retailer" placeholder="Is it a repeat retailer?" step = any required>
+        
+        <label for="used_chip">Used Chip? (1 for yes, 0 for no):</label>
+        <input type="number" name="used_chip" id="used_chip" placeholder="Did you use a chip?" step = any required>
+        
+        <label for="used_pin_number">Used Pin Number? (1 for yes, 0 for no):</label>
+        <input type="number" name="used_pin_number" id="used_pin_number" placeholder="Did you use a pin number?" step = any required>
+        
+        <label for="online_order">Online Order? (1 for yes, 0 for no):</label>
+        <input type="number" name="online_order" id="online_order" placeholder="Was it an online order?" step = any  required>
+        
+        <input type="submit" value="Predict Fraud">
+    </form>
+    {% if msg %}
+    <div class="result">
+        <h2>{{ msg }}</h2>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
